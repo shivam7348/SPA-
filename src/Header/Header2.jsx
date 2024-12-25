@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FcStumbleupon } from "react-icons/fc";
 
 const Header = () => {
@@ -9,13 +9,13 @@ const Header = () => {
   return (
     <header className="px-5 py-2">
       <div className="flex items-center justify-between">
-        <Link to="/" className="z-50">
+        <NavLink to="/" className="z-50">
           <img
             src="https://www.rstopcoder.com/images/logo.png"
             alt="Logo"
             className="h-10  ml-48 "
           />
-        </Link>
+        </NavLink>
 
         <button
           className="md:hidden z-50 p-2  ml-44 "

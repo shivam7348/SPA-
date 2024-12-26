@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FcStumbleupon } from "react-icons/fc";
 
 const Header = () => {
+
+  const navigate =  useNavigate()
+  
   const [isOpen, setIsOpen] = useState(false);
+  
 
   return (
-    <header className="px-5 py-2">
+    <header className="px-5 py-2 shadow-xl	">
       <div className="flex items-center justify-between">
         <NavLink to="/" className="z-50">
           <img
             src="https://www.rstopcoder.com/images/logo.png"
             alt="Logo"
-            className="h-10  ml-48 "
+            className="h-11  ml-48 "
           />
         </NavLink>
 
@@ -25,13 +29,25 @@ const Header = () => {
         </button>
 
         <nav className="hidden md:block">
-          <ul className="flex items-center justify-end font-semibold text-black md:ml-48 cursor-pointer mr-52">
-            <li className="relative group px-3 py-2 text-xl">
-              <Link to="/">Home</Link>
+          <ul className="flex items-center justify-end font-semibold text-black md:ml-48 cursor-pointer mr-52 	">
+            <li className="relative group px-3 py-2 text-xl ">
+              <NavLink to="/">Home</NavLink>
             </li>
-            {/* About Link */}
-            <li className="relative group px-3 py-2">
-              <Link to="/about">About</Link>
+            {/* About NavLink */}
+            <li className="relative group px-3 py-2  z-50 ">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `transition duration-300 ${
+                    isActive
+                      ? "text-indigo-600 underline"
+                      : "hover:text-indigo-500"
+                  }`
+                }
+              >
+                About
+              </NavLink>
+
               <div className="absolute top-1 -left-96 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[900px] transform">
                 <div className="relative top-7 p-6 bg-white rounded-xl shadow-xl w-full">
                   <div className="bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
@@ -49,8 +65,8 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="/webdevlopemnt"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex space-x-1">
@@ -59,10 +75,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Web Development</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -76,10 +92,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Digital Marketing</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -93,8 +109,8 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Software Developer</p>
                               </div>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -108,8 +124,8 @@ const Header = () => {
                                 </span>{" "}
                                 <p className="">Seo</p>
                               </div>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -123,7 +139,7 @@ const Header = () => {
                                 </span>{" "}
                                 <p className="">Health</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -133,7 +149,7 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -147,10 +163,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Health Care</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -164,10 +180,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Education</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -181,7 +197,7 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Other Products</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -191,7 +207,7 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -199,10 +215,10 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Tweak existing functionality
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -210,7 +226,7 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Tweak existing functionality
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -223,13 +239,18 @@ const Header = () => {
               </div>
             </li>
 
-            {/* Products Link */}
+            {/* Products NavLink */}
             <li className="relative group px-3 py-2">
-              <Link to="/products">
+              <NavLink to="/products" 
+              className={({isActive}) => `trasition duration-500 ${
+                isActive
+                ? "text-indigo-800 underline"
+                : "hover:text-indigo-500"
+              }`}>
                 <button>Products</button>
-              </Link>
+              </NavLink>
               <div className="absolute top-1  -right-80   transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[1300px] transform">
-                <div className="relative top-7 p-6 bg-white rounded-xl shadow-xl w-full">
+                <div className="relative top-7 p-6 bg-gradient-to-tr from-[#6cbbb4] to-[#9089fc] rounded-xl shadow-xl w-full">
                   <div className="bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
                   <div className="relative z-10">
                     <div className="grid grid-cols-4 gap-3">
@@ -245,8 +266,8 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="/hospital"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600 justify-between"
                             >
                               <div className="flex ">
@@ -256,14 +277,14 @@ const Header = () => {
                                     alt=""
                                     className="w-7 h-7"
                                   />
-                                </span>{" "}
+                                </span>
                                 <p>Hospital Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="/pharmacy"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -276,11 +297,11 @@ const Header = () => {
                                 </span>{" "}
                                 <p>Pharmacy Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="Laboratory"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -293,11 +314,11 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Laboratory Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="bloodbank"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -310,7 +331,7 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Blood Bank Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -320,8 +341,8 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="collegesystem"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -334,11 +355,11 @@ const Header = () => {
                                 </span>{" "}
                                 <p> College Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="schoolsystem"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -351,11 +372,11 @@ const Header = () => {
                                 </span>{" "}
                                 <p> School Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="/Librarysystem"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -366,13 +387,13 @@ const Header = () => {
                                     className="w-7 h-7 space-x-2"
                                   />
                                 </span>{" "}
-                                <p> Library Management System</p>
+                              <p> Library Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
-                              to="#"
+                            <NavLink
+                              to="/hostelsystem"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
                               <div className="flex ">
@@ -385,10 +406,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Hostel Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -402,7 +423,7 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Learning Management System</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -412,7 +433,7 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -426,11 +447,11 @@ const Header = () => {
                                 </span>{" "}
                                 <p> E-Commerce Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
 
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -444,10 +465,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Job Portal Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -461,10 +482,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Jewellery Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -478,10 +499,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Toursim Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -495,10 +516,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Corporate Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -512,10 +533,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> School Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -529,10 +550,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Real Estate Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -546,10 +567,10 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Construction Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -563,7 +584,7 @@ const Header = () => {
                                 </span>{" "}
                                 <p> Fashion Web Design</p>
                               </div>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -573,11 +594,16 @@ const Header = () => {
               </div>
             </li>
 
-            {/* Services Link */}
+            {/* Services NavLink */}
             <li className="relative group px-3 py-2">
-              <Link to="/servicing">
+              <NavLink to="/servicing"
+              className={({isActive}) => `transition duration-300 ${
+                isActive
+                ? "text-indigo-800 underline"
+                : "hover:text-indigo-600"
+              }`}>
                 <button>Services</button>
-              </Link>
+              </NavLink>
               <div className="absolute top-1 -right-72 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[800px] transform">
                 <div className="relative top-7 p-6 bg-white rounded-xl shadow-xl w-full">
                   <div className=" bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
@@ -596,7 +622,7 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -604,10 +630,10 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 All-in-one editor
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -615,10 +641,10 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Pre-build payments page
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -626,7 +652,7 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Use AI to generate captions
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -637,7 +663,7 @@ const Header = () => {
                           </p>
                           <ul className="mt-3 text-[15px]">
                             <li>
-                              <Link
+                              <NavLink
                                 to="#"
                                 className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                               >
@@ -645,10 +671,10 @@ const Header = () => {
                                 <p className="text-gray-500 font-normal">
                                   All-in-one editor
                                 </p>
-                              </Link>
+                              </NavLink>
                             </li>
                             <li>
-                              <Link
+                              <NavLink
                                 to="#"
                                 className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                               >
@@ -656,10 +682,10 @@ const Header = () => {
                                 <p className="text-gray-500 font-normal">
                                   Pre-build payments page
                                 </p>
-                              </Link>
+                              </NavLink>
                             </li>
                             <li>
-                              <Link
+                              <NavLink
                                 to="#"
                                 className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                               >
@@ -667,7 +693,7 @@ const Header = () => {
                                 <p className="text-gray-500 font-normal">
                                   Use AI to generate captions
                                 </p>
-                              </Link>
+                              </NavLink>
                             </li>
                           </ul>
                         </div>
@@ -678,7 +704,7 @@ const Header = () => {
                         </p>
                         <ul className="mt-3 text-[15px]">
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -686,10 +712,10 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Tweak existing functionality
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -697,10 +723,10 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Get your time back
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="#"
                               className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                             >
@@ -708,7 +734,7 @@ const Header = () => {
                               <p className="text-gray-500 font-normal">
                                 Generate content for socials
                               </p>
-                            </Link>
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -722,11 +748,14 @@ const Header = () => {
               </div>
             </li>
 
-            {/* Pricing Link */}
+            {/* Pricing NavLink */}
             <li className="relative group px-3 py-2">
-              <Link to="/pricing" className="hover:opacity-50 cursor-pointer">
+              <NavLink
+                to="/pricing"
+                className="hover:opacity-50 cursor-pointer"
+              >
                 Pricing
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -740,21 +769,21 @@ const Header = () => {
         `}
         >
           <div className="flex flex-col p-2 mt-11 ml-23 text-2xl">
-            <Link to="/" className="py-2  text-2xl  ">
+            <NavLink to="/" className="py-2  text-2xl  ">
               Home
-            </Link>
-            <Link to="/about" className="py-2  text-2xl">
+            </NavLink>
+            <NavLink to="/about" className="py-2  text-2xl">
               About
-            </Link>
-            <Link to="/products" className="py-2  text-2xl">
+            </NavLink>
+            <NavLink to="/products" className="py-2  text-2xl">
               Products
-            </Link>
-            <Link to="/services" className="py-2  text-2xl">
+            </NavLink>
+            <NavLink to="/services" className="py-2  text-2xl">
               Services
-            </Link>
-            <Link to="/pricing" className="py-2  text-2xl">
+            </NavLink>
+            <NavLink to="/pricing" className="py-2  text-2xl">
               Pricing
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

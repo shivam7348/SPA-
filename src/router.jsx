@@ -1,11 +1,11 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
-import Pricing from "./components/Pages/Pricing";
-import Resources from "./components/Pages/Resources";
 import Home from "./components/Pages/Home";
 import Products from "./components/Pages/Developers";
-import About1 from "./components/Pages/Pricing";
+import Github from "./components/Pages/Servicing";
+import About from "./About/About";
+import HospitalManagementSystem from "./Products/HealthCare/HospitalManagementSystem";
 
 const router = createBrowserRouter([
   {
@@ -13,20 +13,27 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/", 
         element: <Home />,
       },
       {
-        path: "/about",
-        element: <About1 />,
+        path: "about",
+        element: <About />,
       },
       {
-        path: "/products",
+        path: "products",
         element: <Products />,
+        children: [
+          {
+        
+            path: "products/hospital", 
+            element: <HospitalManagementSystem />
+          }
+        ]
       },
       {
-        path: "/servicing",
-        element: <Resources />,
+        path: "servicing",
+        element: <Github />,
       },
     ],
   },

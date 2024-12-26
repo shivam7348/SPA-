@@ -10,8 +10,9 @@ function Home() {
   return (
     <>
     
-      <Hero />
+      
       <Banner/>
+      <Hero />
     
       <CardDefault
         role="Web Designer"

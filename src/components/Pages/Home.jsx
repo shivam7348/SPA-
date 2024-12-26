@@ -1,20 +1,20 @@
 import React from "react";
 import Hero from "../Hero Section/Hero";
-// import Hero2 from "../Hero Section/Hero2";
-// import Example from "../Hero Section/HeroTawind";
 import { CardDefault } from "../Hero Section/Card";
 import ProducrsBAnner from "../../banner/ProducrsBAnner";
-import Banner from "../../banner/Banner";
+import MainBanner from "../../banner/MainBanner";
+import CmsBanner from "../../banner/CmsBanner";
 
 function Home() {
   return (
     <>
-    
-      
-      <Banner/>
+
+
+      {/* <Banner/> */}
+      <MainBanner />
       <Hero />
-    
-      <CardDefault
+
+      {/* <CardDefault
         role="Web Designer"
         img="https://img.freepik.com/premium-photo/office-responsive-devices-design-website-3d-rendering_72104-3783.jpg?semt=ais_hybrid"
       />
@@ -29,9 +29,10 @@ function Home() {
       <CardDefault
         role="Recat Developer"
         img="https://img.freepik.com/premium-vector/growth-your-business-landing-page-concept_823925-921.jpg?semt=ais_hybrid"
-      />
-      <ProducrsBAnner/>
-      
+      /> */}
+      {/* <ProducrsBAnner /> */}
+      <CmsBanner />
+
     </>
   );
 }

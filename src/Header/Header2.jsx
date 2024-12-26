@@ -249,7 +249,7 @@ const Header = () => {
               }`}>
                 <button>Products</button>
               </NavLink>
-              <div className="absolute top-1  -right-80   transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[1300px] transform">
+              <div className="absolute  top-1 -right-96 ht-   transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[1300px] transform">
                 <div className="relative top-7 p-6 bg-gradient-to-tr from-[#6cbbb4] to-[#9089fc] rounded-xl shadow-xl w-full">
                   <div className="bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
                   <div className="relative z-10">

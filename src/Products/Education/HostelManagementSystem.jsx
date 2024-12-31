@@ -1,8 +1,11 @@
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 function HostelManagementSystem() {
   return (
-    <div>HostelManagementSystem</div>
+    <div>
+      <Button/>
+    </div>
   )
 }
 

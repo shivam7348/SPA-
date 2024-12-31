@@ -7,7 +7,7 @@ function Github() {
     fetch('https://api.github.com/users/shivam7348')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setData(data);
       });
   }, []);

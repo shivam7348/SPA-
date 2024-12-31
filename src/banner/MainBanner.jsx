@@ -24,10 +24,10 @@ const MainBanner = () => {
       
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-white px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-          Welcome
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-gray-300">
+          Welcome To RS TOP Coder
         </h1>
-        <button className="mt-4 px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition-all">
+        <button className="text-[#535353] font-semibold text-left px-5 py-0 leading-[38px] rounded-[25px] border-2 border-[#ea3d41] uppercase">
           Explore Now
         </button>
       </div>

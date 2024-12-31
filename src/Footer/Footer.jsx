@@ -102,7 +102,7 @@ function Footer() {
             <ul className="mt-6 space-y-4">
               <li>
                 <Link
-                  to="#"
+                  to="/about"
                   title=""
                   className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
                 >
@@ -111,18 +111,18 @@ function Footer() {
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link
-                  to="#"
+                  to=""
                   title=""
                   className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
                 >
                   {" "}
                   Features{" "}
                 </Link>
-              </li>
+              </li> */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="#"
                   title=""
@@ -131,9 +131,9 @@ function Footer() {
                   {" "}
                   Works{" "}
                 </Link>
-              </li>
+              </li> */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="#"
                   title=""
@@ -142,7 +142,7 @@ function Footer() {
                   {" "}
                   Career{" "}
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
